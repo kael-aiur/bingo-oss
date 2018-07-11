@@ -12,6 +12,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URI;
 
 /**
  * Created by KAEL on 2017/5/10.
@@ -37,10 +38,13 @@ public class SecurityFilter implements Filter {
         if(authentication != null || req.getRequestURI().endsWith("/ssoclient/login")){
             chain.doFilter(request,response);
         }else {
-            resp.sendRedirect(req.getContextPath()+"/ssoclient/login?return_url="+ Urls.encode("http://localhost:8080/user.jsp"));
+            String str = req.getRequestURL().toString();
+            URI u = URI.create(str);
+            String host = u.getScheme()+"://"+u.getHost()+":"+u.getPort();
+            resp.sendRedirect(req.getContextPath()+"/ssoclient/login?return_url="+ Urls.encode(host+req.getContextPath()+"/user.jsp"));
         }
     }
-
+ 
     @Override
     public void destroy() {
 

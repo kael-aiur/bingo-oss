@@ -17,6 +17,16 @@
 	<servlet>
 		<servlet-name>login</servlet-name>
 		<servlet-class>net.bingosoft.demo.LoginServlet</servlet-class>
+		<init-param>
+			<!--
+				本地开发测试sso:http://10.200.84.30:8089/ssov3
+				本地开发测试sso:https://10.200.84.30:8999/ssov3
+            	聆客测试环境sso:https://10.201.76.141/sso
+            	开发环境sso:https://developer.bingosoft.net:12100/ssov3
+			-->
+			<param-name>ssoUrl</param-name>
+			<param-value>http://10.200.84.30:8089/ssov3</param-value>
+		</init-param>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>login</servlet-name>

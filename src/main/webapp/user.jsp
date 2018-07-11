@@ -13,6 +13,6 @@
 <body>
     <%= ((Authentication)request.getSession().getAttribute("loginUser")).getUsername() %>
     <br/>
-    <a href="/index.jsp">回到首页</a>
+    <a href="<%=request.getContextPath() +"/index.jsp"%>">回到首页</a>
 </body>
 </html>

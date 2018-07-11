@@ -12,7 +12,7 @@
         <dependency>
             <groupId>net.bingosoft.oss</groupId>
             <artifactId>sso-client</artifactId>
-            <version>[3.0.1,]</version>
+            <version>3.0.5-SNAPSHOT</version>
         </dependency>
         <!-- 编译阶段需要 -->
         <dependency>
@@ -22,5 +22,7 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
+    <build>
+        <finalName>ssoclientdemo</finalName>
+    </build>
 </project>
