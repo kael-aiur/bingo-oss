@@ -38,10 +38,7 @@ public class SecurityFilter implements Filter {
         if(authentication != null || req.getRequestURI().endsWith("/ssoclient/login")){
             chain.doFilter(request,response);
         }else {
-            String str = req.getRequestURL().toString();
-            URI u = URI.create(str);
-            String host = u.getScheme()+"://"+u.getHost()+":"+u.getPort();
-            resp.sendRedirect(req.getContextPath()+"/ssoclient/login?return_url="+ Urls.encode(host+req.getContextPath()+"/user.jsp"));
+            resp.sendRedirect(req.getContextPath()+"/ssoclient/login");
         }
     }
  
