@@ -19,7 +19,7 @@
 		<servlet-class>net.bingosoft.demo.LoginServlet</servlet-class>
 		<init-param>
 			<param-name>ssoUrl</param-name>
-			<param-value>https://linksso.yuexiu.com</param-value>
+			<param-value>https://demo.server.com</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>
